@@ -34,5 +34,5 @@
         android:backgroundTint="@color/mustard"
         android:textColor="@color/almostblack"
         android:layout_gravity="center"
-        android:text="@string/start_button"/>
+        android:text="@string/start_button" />
 </LinearLayout>
