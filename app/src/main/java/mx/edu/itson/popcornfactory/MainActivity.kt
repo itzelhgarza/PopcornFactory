@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener{
             var intento = Intent(this, CatalogActivity::class.java)
             this.startActivity(intento)
+
+
         }
     }
 }

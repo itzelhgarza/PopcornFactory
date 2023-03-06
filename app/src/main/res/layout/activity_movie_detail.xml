@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="3pt"
+    android:background="@color/almostblack"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MovieDetail">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/bones"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BONES"
+            android:textColor="@color/mustard"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/sinopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/babygray"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Dr. Temperance Brennan is a brilliant, but lonely, anthropologist whom is approached by an ambitious FBI agent, named Seely Booth, to help the bureau solve a series of unsolved crimes by identifying the long-dead bodies of missing persons by their bone structure. But both Agent Booth dr. Brennan and her team come up again a variety of interference from red tape, corruption and local noncooperation."
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:justificationMode="inter_word"/>
+
+
+    </LinearLayout>
+</LinearLayout>

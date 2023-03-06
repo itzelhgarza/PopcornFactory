@@ -80,7 +80,7 @@ class CatalogActivity : AppCompatActivity() {
 
             image.setOnClickListener{
                 var intento = Intent(context, MovieDetail::class.java)
-                intento.putExtra("titulo", "pelicula")
+                intento.putExtra("titulo", pelicula.titulo)
                 intento.putExtra("sinopsis", pelicula.sinopsis)
                 intento.putExtra("header", pelicula.header)
                 intento.putExtra("imagen", pelicula.image)
