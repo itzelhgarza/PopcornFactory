@@ -1,7 +1,9 @@
 package mx.edu.itson.popcornfactory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -10,21 +12,25 @@ class MovieDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
 
-            val header_image: ImageView = findViewById(R.id.header_image)
-            val title: TextView = findViewById(R.id.title)
-            val sinopsis: TextView = findViewById(R.id.sinopsis)
+            val iv_pelicula_imagen: ImageView = findViewById(R.id.header_image)
+            val tv_nombre_pelicula: TextView = findViewById(R.id.title)
+            val tv_pelicula_desc: TextView = findViewById(R.id.sinopsis)
+            val seatLeft: TextView = findViewById(R.id.seatLeft)
 
-            var extras = intent.extras
+            val bundle = intent.extras
 
-            var titulo_pelicula = extras?.getString("titulo")
-            var pelicula_des = extras?.getString("sinopsis")
-            var imagen_pelicula = extras?.getInt("header")
+            if(bundle != null){
+                iv_pelicula_imagen.setImageResource(bundle.getInt("header"))
+                tv_nombre_pelicula.setText(bundle.getString("titulo"))
+                tv_pelicula_desc.setText(bundle.getString("sinopsis"))
+                seatLeft.setText(bundle.getInt("numberSeats").toString())
+            }
 
-            title.text = titulo_pelicula
-            sinopsis.text = pelicula_des
-            header_image.setImageResource(imagen_pelicula!!)
+            var button: Button = findViewById(R.id.buyTickets)
 
-
-
+            button.setOnClickListener{
+                var intento = Intent(this,SeatSelection::class.java)
+                this.startActivity(intento)
+            }
         }
 }
